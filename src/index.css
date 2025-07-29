@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to right, #0f172a, #1e293b);
+  color: #cbd5e1;
+  overflow: hidden;
+}
+
+/* Kontainer utama */
+.about-container {
+  display: flex;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Kolom KIRI (sticky) */
+.left-column {
+  flex: 1;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background-color: #0f172a;
+  padding: 2rem;
+  border-right: 2px solid #334155;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Kolom KANAN (scrollable content) */
+.right-column {
+  flex: 2;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+}
+
+/* BIO */
+.bio {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+.bio p {
+  margin-bottom: 32px;
+}
+
+/* FOTO PROFILE */
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 9999px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #94a3b8;
+}
+
+/* NAMA */
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* SOSIAL MEDIA */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+  color: #94a3b8;
+  margin-top: 2rem;
+}
+
+.social-icons i:hover {
+  color: #facc15;
+  cursor: pointer;
+}
+
+/* TOMBOL NAVIGASI */
+.navigation-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.project-button {
+  width: 100%;
+  background-color: #334155;
+  color: #e2e8f0;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.project-button:hover {
+  background-color: #475569;
+}
+
+/* SECTION: PROJECT, PENGALAMAN, PENDIDIKAN, SKILLS */
+.section {
+  margin-top: 80px;
+  padding-top: 2rem;
+  border-top: 1px solid #475569;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+}
+
+.section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #cbd5e1;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .left-column {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 2px solid #334155;
+  }
+
+  .right-column {
+    padding: 1.5rem;
+  }
+
+  .navigation-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .project-button {
+    flex: 1 1 auto;
+    width: auto;
+  }
+}
+.project-button {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.project-button:hover {
+  opacity: 0.85;
+}
+
+.tech-box {
+  margin-top: 12px;
+}
+
+.tech-list {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 4px 12px;
+}
