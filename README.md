@@ -1,6 +1,6 @@
 # 🌐 Personal Portfolio - Dwi Wahyu Susilowati
 
-![Portfolio Screenshot](./assets/preview.png)
+
 
 ## 📌 Deskripsi
 Ini adalah **Website Portofolio Pribadi** saya, dibangun untuk menampilkan informasi tentang diri saya, proyek-proyek yang pernah saya kerjakan, dan teknologi yang saya kuasai.  
