@@ -1,9 +1,9 @@
 import React from 'react';
-import About from './component/About';
+import About from './components/About';
 
 const App = () => {
   return (
-    <div>
+    <div >
       <About />
     </div>
   );

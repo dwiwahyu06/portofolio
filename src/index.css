@@ -1,3 +1,4 @@
+/* Default: Desktop besar */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -28,7 +29,7 @@ body {
   align-items: center;
 }
 
-/* Kolom KANAN (scrollable content) */
+/* Kolom KANAN (scrollable) */
 .right-column {
   flex: 2;
   padding: 2rem 3rem;
@@ -39,7 +40,6 @@ body {
 .bio {
   font-size: 1rem;
   line-height: 1.8;
-  color: #cbd5e1;
 }
 
 .bio p {
@@ -60,7 +60,6 @@ body {
 .name {
   font-size: 2rem;
   font-weight: 700;
-  color: #e2e8f0;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -70,7 +69,6 @@ body {
   display: flex;
   gap: 1rem;
   font-size: 1.5rem;
-  color: #94a3b8;
   margin-top: 2rem;
 }
 
@@ -88,6 +86,14 @@ body {
   width: 100%;
 }
 
+/* Pastikan parent punya kontrol layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Geser semua konten ke kiri */
+}
+
+/* Untuk tombol project */
 .project-button {
   width: 100%;
   background-color: #334155;
@@ -98,77 +104,15 @@ body {
   cursor: pointer;
   font-size: 0.9rem;
   transition: background-color 0.3s;
+  display: inline-block;
+  border: 2px solid #fff;
+  font-weight: 600;
+  margin-right: 8px;
+  margin-left: -5px; /* Sedikit geser kiri */
 }
 
 .project-button:hover {
   background-color: #475569;
-}
-
-/* SECTION: PROJECT, PENGALAMAN, PENDIDIKAN, SKILLS */
-.section {
-  margin-top: 80px;
-  padding-top: 2rem;
-  border-top: 1px solid #475569;
-}
-
-.section h2 {
-  font-size: 1.5rem;
-  color: #e2e8f0;
-  margin-bottom: 1rem;
-}
-
-.section ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  color: #cbd5e1;
-}
-
-.skills-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 0.5rem;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-  }
-
-  .left-column {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 2px solid #334155;
-  }
-
-  .right-column {
-    padding: 1.5rem;
-  }
-
-  .navigation-buttons {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .project-button {
-    flex: 1 1 auto;
-    width: auto;
-  }
-}
-.project-button {
-  display: inline-block;
-  padding: 10px 16px;
-  border: 2px solid #fff;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  margin-right: 8px;
-}
-
-.project-button:hover {
   opacity: 0.85;
 }
 
@@ -182,4 +126,230 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 4px 12px;
+}
+
+/* Breakpoint: Tablet (Potrait & Landscape) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .left-column {
+    position: relative;
+    height: auto;
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #334155;
+    padding: 1.5rem;
+  }
+
+  .right-column {
+    padding: 1.5rem;
+  }
+
+  .name {
+    font-size: 1.75rem;
+  }
+
+  .profile-photo {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Breakpoint: Mobile Android & iOS */
+@media (max-width: 767px) {
+  body {
+    overflow: auto;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .left-column {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+    border-right: none;
+    border-bottom: 2px solid #334155;
+  }
+
+  .right-column {
+    padding: 1.25rem;
+  }
+
+  .profile-photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .social-icons {
+    font-size: 1.25rem;
+  }
+
+  .navigation-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .project-button {
+    flex: 1 1 auto;
+    width: auto;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Breakpoint: Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  .profile-photo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .name {
+    font-size: 1.3rem;
+  }
+
+  .bio {
+    font-size: 0.9rem;
+  }
+
+  .social-icons {
+    font-size: 1rem;
+    gap: 0.75rem;
+  }
+
+  .project-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .tech-list {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+}
+/* TECHNOLOGIES */
+.tech-container {
+  margin-top: 40px;
+}
+
+.tech-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-align: left;
+  color: #grey-100;
+}
+
+.tech-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 16px;
+}
+
+.tech-item {
+  background-color: #1e293b;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #334155;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 10px rgba(250, 204, 21, 0.2);
+}
+
+.tech-icon {
+  font-size: 2rem;
+  color: #facc15;
+}
+
+.tech-name {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+/* Mobile tweak */
+@media (max-width: 480px) {
+  .tech-icon {
+    font-size: 1.6rem;
+  }
+  .tech-name {
+    font-size: 0.8rem;
+  }
+}
+.tech-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #94a3b8;
+  max-width: 600px;
+  line-height: 1.6;
+}
+.tech-icon {
+  font-size: 2rem;
+}
+
+.tech-item:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0px 4px 10px rgba(250, 204, 21, 0.2);
+}
+.project-section {
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: #1e293b;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #334155;
+}
+
+.project-card h3 {
+  margin: 0 0 0.5rem;
+  color: #facc15;
+}
+
+.project-card p {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.project-tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tech-icon-only {
+  font-size: 2rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tech-icon-only:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
 }

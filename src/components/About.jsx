@@ -2,7 +2,8 @@ import React from 'react';
 import '../index.css';
 import Dwi from '../assets/dwi.jpg';
 import Project from './Project';
-
+import Contact from "./Contact";
+import Technologies from './Technologies';
 
 const About = () => {
   const scrollTo = (id) => {
@@ -29,6 +30,8 @@ const About = () => {
           <button className="project-button" onClick={() => scrollTo('technologies')}>
             Technologies
           </button>
+        <button className="project-button" onClick={() => scrollTo('Contact')}>Contact</button>
+
         </div>
       </div>
 
@@ -51,7 +54,10 @@ const About = () => {
         {/* Project dipisahkan ke komponen sendiri */}
         <Project />
 
-         
+
+        {/* Teknologi dipisahkan ke komponen sendiri */}
+        <Technologies />
+        <Contact />
       </div>
     </div>
   );
